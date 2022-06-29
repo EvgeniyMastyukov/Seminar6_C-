@@ -16,3 +16,5 @@ void DecToOther(int num, int baseN)
 }
 
 DecToOther(numDec, baseNum);
+// string a = Convert.ToString(2,2);
+// Console.WriteLine(a);
