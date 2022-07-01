@@ -3,19 +3,26 @@
 //b1 = 2, k1 = 5, b2 = 4, k2 = 9 -> (-0,5; -0,5)
 
 Console.WriteLine("Введите значение переменной b1: ");
-int b1 = int.Parse(Console.ReadLine());
+float b1 = float.Parse(Console.ReadLine());
 Console.WriteLine("Введите значение переменной k1: ");
-int k1 = int.Parse(Console.ReadLine());
+float k1 = float.Parse(Console.ReadLine());
 Console.WriteLine("Введите значение переменной b2: ");
-int b2 = int.Parse(Console.ReadLine());
+float b2 = float.Parse(Console.ReadLine());
 Console.WriteLine("Введите значение переменной k2: ");
-int k2 = int.Parse(Console.ReadLine());
-double x;
-double y1 = k1 * x + b1;
-double y2 = k2 * x + b2;
-y1 == y2;
-k1* x + b1 == k2 * x + b2;
-k1* x - k2*x == b2 - b1;
-(k1 - k2) * x == b2 - b1;
+float k2 = float.Parse(Console.ReadLine());
+float x;
+float y1 = k1 * (b2 - b1) / (k1 - k2) + b1;
+float y2 = k2 * (b2 - b1) / (k1 - k2) + b2;
+// y1 == y2;
+// k1* x + b1 == k2 * x + b2;
+// k1* x - k2*x == b2 - b1;
+// (k1 - k2) * x == b2 - b1;
+
 x = (b2 - b1) / (k1 - k2);
-Console.WriteLine($"{x}");
+
+if ((k1 - k2) == 0)
+{
+    Console.WriteLine("Прямые не пересекаются");
+}
+else
+Console.WriteLine("Координаты точки пересечения двух прямых ({0};{1})", x, y1);
